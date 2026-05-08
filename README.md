@@ -1,7 +1,8 @@
 # sunpillkim.com
 
-Personal academic website of Sunpill Kim — Ph.D. candidate in Applied
-Mathematics at Hanyang University, working on AI security.
+Personal academic website of Sunpill Kim — postdoctoral researcher at
+Hanyang University, working at the intersection of applied mathematics,
+security, and AI.
 
 Built with [Jekyll](https://jekyllrb.com/), hosted on
 [GitHub Pages](https://pages.github.com/) at <https://sunpillkim.com>.

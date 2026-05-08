@@ -8,35 +8,13 @@ description: "Publications by Sunpill Kim — peer-reviewed conference and journ
 <div class="page-header">
   <h1>Publications</h1>
   <p class="lede">
-    Grouped by venue tier, newest first.
+    Newest first.
     <span class="venue top" style="background:#fef3c7;padding:0 4px;font-weight:600;">Highlighted</span>
-    entries are top-tier security, vision, or ML venues. * = co-first author.
+    entries are top-tier security, vision, ML, or journal venues. * = co-first author.
     For the full archive, see also
     <a href="{{ site.author.scholar }}">Google Scholar</a>.
   </p>
 </div>
-
-{%- comment -%} Top conferences {%- endcomment -%}
-{%- assign top_conf = site.data.publications | where: "category", "top-conf" | sort: "year" | reverse -%}
-{%- if top_conf.size > 0 -%}
-<section class="pub-group">
-  <h2>Top-tier conferences</h2>
-  {%- for p in top_conf -%}
-    {%- include _pub_entry.html p=p -%}
-  {%- endfor -%}
-</section>
-{%- endif -%}
-
-{%- comment -%} Top journals {%- endcomment -%}
-{%- assign top_journal = site.data.publications | where: "category", "top-journal" | sort: "year" | reverse -%}
-{%- if top_journal.size > 0 -%}
-<section class="pub-group">
-  <h2>Top-tier journals</h2>
-  {%- for p in top_journal -%}
-    {%- include _pub_entry.html p=p -%}
-  {%- endfor -%}
-</section>
-{%- endif -%}
 
 {%- comment -%} Conferences {%- endcomment -%}
 {%- assign conf = site.data.publications | where: "category", "conf" | sort: "year" | reverse -%}
@@ -60,18 +38,7 @@ description: "Publications by Sunpill Kim — peer-reviewed conference and journ
 </section>
 {%- endif -%}
 
-{%- comment -%} Preprints / under review {%- endcomment -%}
-{%- assign preprint = site.data.publications | where: "category", "preprint" | sort: "year" | reverse -%}
-{%- if preprint.size > 0 -%}
-<section class="pub-group">
-  <h2>Under review</h2>
-  {%- for p in preprint -%}
-    {%- include _pub_entry.html p=p -%}
-  {%- endfor -%}
-</section>
-{%- endif -%}
-
-{%- comment -%} Other (formal proofs, etc.) {%- endcomment -%}
+{%- comment -%} Other (preprints, formal proofs) {%- endcomment -%}
 {%- assign other = site.data.publications | where: "category", "other" | sort: "year" | reverse -%}
 {%- if other.size > 0 -%}
 <section class="pub-group">

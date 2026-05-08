@@ -15,7 +15,7 @@
   authors: "S. Paik*, <span class='me'>S. Kim</span>*, C. Hwang, J. H. Seo"
 
 - date:    "2026-02-05"
-  body:    "Will receive the <strong>Outstanding Ph.D. Dissertation Award</strong> from Hanyang University. Thesis: <em>Score-Based Non-Adaptive Attack Against Face Recognition Systems</em>."
+  body:    "Received the <strong>Outstanding Ph.D. Dissertation Award</strong> from Hanyang University. Thesis: <em>Score-Based Non-Adaptive Attack Against Face Recognition Systems</em>."
 
 - date:    "2025-12-22"
   venue:   "IEEE Access"
@@ -25,7 +25,7 @@
 
 - date:    "2025-12-03"
   venue:   "IEEE T-BIOM"
-  tier:    "top"
+  tier:    ""
   title:   "Towards Certifiably Robust Face Recognition: Analyses and Improvements"
   authors: "S. Paik, D. Kim, C. Hwang, <span class='me'>S. Kim</span>, J. H. Seo"
 
@@ -61,7 +61,7 @@
 
 - date:    "2025-01-01"
   venue:   "Pattern Recognition"
-  tier:    ""
+  tier:    "top"
   title:   "Deep Face Template Protection in the Wild"
   authors: "<span class='me'>S. Kim</span>, H. Shin, J. H. Seo"
 
@@ -128,7 +128,7 @@
 - date:    "2021-12-23"
   body:    "Awarded a Samil Foundation scholarship (~USD 10,000, through Feb 2023)."
 
-- date:    "2021-04"
+- date:    "2021-04-01"
   venue:   "CVPR 2021"
   tier:    "top"
   title:   "IronMask: Modular Architecture for Protecting Deep Face Template"
