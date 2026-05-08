@@ -2,7 +2,7 @@
 layout: default
 title: "Research"
 permalink: /research/
-description: "Research themes — representation-centric AI security: adversarial attacks, privacy-preserving defenses, and certified robustness for foundation models."
+description: "Research themes — representation-centric AI security: non-adaptive attacks, privacy-preserving defenses, and certified robustness for recognition systems."
 ---
 
 <div class="page-header">
@@ -11,7 +11,7 @@ description: "Research themes — representation-centric AI security: adversaria
     My work pursues a single thesis: that the security of modern AI systems is
     governed, at the deepest level, by the <em>geometry of their representation
     space</em>. Most state-of-the-art models — face recognizers, speaker
-    identifiers, vision–language models — embed their inputs into a
+    recognizers, vision–language models — embed their inputs into a
     high-dimensional hypersphere; the way that hypersphere is partitioned
     determines what an attacker can extract and what a defender can hide.
     My research treats this geometry as the <strong>primary object of study</strong>,
@@ -45,13 +45,27 @@ description: "Research themes — representation-centric AI security: adversaria
   <h3>Where it goes next</h3>
   <p>
     The non-adaptive framework extends naturally beyond faces. Palmprint
-    recognition, voice biometrics, and the identity-verification stacks
+    recognition, speaker recognition, and the identity-verification stacks
     increasingly used in finance and authentication all live on similar
     hyperspherical embedding spaces, and all inherit the same structural
     weaknesses. A current direction analyses how the
     <em>source–target embedding distance</em> controls the difficulty of a
     targeted attack, and frames a query-budget splitting strategy as an
     optimization problem.
+  </p>
+  <p>
+    So far my published attacks have stayed within biometrics — faces and
+    speech. The natural next step is to push the same machinery onto models
+    that are not biometric at all but inherit the same geometry. CLIP and
+    the vision–language models built on top of it use the same
+    hyperspherical embedding primitives, and an ongoing line of work uses
+    high-level prompting to iteratively refine images so as to drift the
+    CLIP decision boundary, defeating modern deepfake detectors without
+    any pixel-level perturbation. The flip side of strong attacks is the
+    highest-purity adversarial training data we can produce, so the endgame
+    is a closed loop in the spirit of GANs: use mathematically grounded
+    attacks to generate worst-case data, then use it to train recognizers
+    and detectors that are demonstrably more robust.
   </p>
 </section>
 
@@ -62,19 +76,23 @@ description: "Research themes — representation-centric AI security: adversaria
     Passwords match exactly. Biometric embeddings — and, more broadly, the
     feature vectors inside any modern recognizer — do not: every measurement
     carries a different noise realization, and the resulting embedding
-    drifts. This non-determinism breaks the standard cryptographic playbook,
-    but the right repair depends on the deployment.
+    drifts. The whole point of using a biometric is to spare the user the
+    burden of carrying a secret, so the basic challenge of biometric
+    template protection (BTP) is to authenticate fuzzy data <em>without a
+    secret key</em> while keeping the underlying biometric private.
+    Standard cryptography is not directly applicable, and the right repair
+    depends on the deployment setting.
   </p>
   <p>
-    In <strong>verification</strong> (1:1 matching), the user holds their own
-    enrolled template together with any keys protecting it; encrypting that
-    template offers little real protection, since an attacker reaching the
-    user-side store can reach the key as well. The interesting question is
-    instead whether the embedding can be transformed so that it remains
-    matchable but cannot be inverted into a face — the goal of
-    biometric template protection (BTP). My work on the verification side
-    combines real-valued error-correcting codes with hash functions to
-    protect templates without sacrificing accuracy:
+    In <strong>verification</strong> (1:1 matching), the absence of a secret
+    key is exactly the design constraint. Storing the template in plaintext
+    leaks the underlying biometric the moment the database is breached, and
+    encrypting it under a user-held key reintroduces the burden biometrics
+    was meant to remove. What is needed instead is a public-key-only
+    transformation that keeps the embedding matchable but irreversible — so
+    that the protected template can be released without leaking the source
+    biometric. My work on the verification side combines real-valued
+    error-correcting codes with hash functions to do exactly this:
     <strong>IronMask</strong> (CVPR&nbsp;2021),
     <strong>Deep Face Template Protection in the Wild</strong>
     (Pattern Recognition&nbsp;2025), and <strong>SilverMask</strong>
@@ -82,12 +100,14 @@ description: "Research themes — representation-centric AI security: adversaria
     noise-correction mechanism.
   </p>
   <p>
-    In <strong>identification</strong> (1:N search), the server matches a
-    probe against many enrolled templates without holding a secret key, so
-    homomorphic encryption (HE) <em>is</em> a meaningful primitive — the
-    standard assumption that the deciding party holds the key is reasonable
-    at this scale. The catch is cost: a naïve homomorphic distance
-    computation over every template is far too slow to deploy.
+    In <strong>identification</strong> (1:N search) the operational picture
+    is different. At airport-scale or building-access-control scale, a
+    single long-lived secret key held by the deciding party is a reasonable
+    assumption — the convenience constraint is on the user side, not the
+    operator. That assumption opens the door to homomorphic encryption: the
+    server can match a probe against millions of enrolled templates without
+    ever decrypting them. The catch is cost — a naïve homomorphic distance
+    over every template is far too slow in practice.
     <strong>IDFace</strong> (ICCV&nbsp;2025) closes that gap with an
     efficient encoding paired with an almost-isometric transformation,
     pushing large-scale homomorphic identification into a practical regime.
@@ -128,27 +148,6 @@ description: "Research themes — representation-centric AI security: adversaria
     <strong>IEEE&nbsp;T-BIOM&nbsp;2025</strong> studies how
     certified-robustness analyses transfer to recognition geometry, identifies
     where the assumptions break, and proposes targeted fixes.
-  </p>
-</section>
-
-<section class="prose">
-  <div class="sec-label">04 · Foundation models</div>
-  <h2>The same geometry, at scale</h2>
-  <p>
-    The hyperspherical embedding spaces studied above are not specific to
-    biometrics. CLIP — the visual backbone behind most modern vision-language
-    models — uses the same geometric primitives, and inherits many of the
-    same vulnerabilities. A current line of work uses high-level prompting to
-    iteratively refine images so as to drift the CLIP decision boundary,
-    defeating modern deepfake detectors without touching pixel-level
-    perturbations.
-  </p>
-  <p>
-    The flip side is that strong attacks produce the highest-purity
-    adversarial training data we have. The endgame for this thread is a
-    closed loop in the spirit of GANs: use mathematically grounded attacks to
-    generate the worst-case data, then use that data to train recognizers and
-    detectors that are demonstrably more robust.
   </p>
 </section>
 
