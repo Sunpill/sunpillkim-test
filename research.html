@@ -25,9 +25,10 @@ description: "Research themes — representation-centric AI security: adversaria
   <p>
     Modern face-recognition pipelines map an input to an embedding on a
     high-dimensional hypersphere $\mathbb{S}^{d-1}$. Within that hypersphere
-    sit <em>identity subspaces</em> — regions in which embeddings of the same
-    person concentrate. Once that geometry is understood, surprisingly little
-    information is needed to invert a template or impersonate an identity.
+    sit <em>attribute subspaces</em> — low-dimensional regions along which
+    identity-relevant attributes vary. Once that structure is understood,
+    surprisingly little information is needed to invert a template or
+    impersonate an identity.
   </p>
   <p>
     Most prior black-box attacks on face recognition rely on adaptive query
@@ -50,7 +51,7 @@ description: "Research themes — representation-centric AI security: adversaria
     weaknesses. A current direction analyses how the
     <em>source–target embedding distance</em> controls the difficulty of a
     targeted attack, and frames a query-budget splitting strategy as an
-    optimization problem — work targeted at <strong>IEEE&nbsp;TPAMI</strong>.
+    optimization problem.
   </p>
 </section>
 
@@ -58,38 +59,55 @@ description: "Research themes — representation-centric AI security: adversaria
   <div class="sec-label">02 · Defense</div>
   <h2>Privacy-preserving defenses for noisy embeddings</h2>
   <p>
-    Passwords match exactly. Biometrics, prompts, and the visual inputs of a
-    vision-language model do not — every measurement carries a different noise
-    realization, and the resulting embeddings drift. This non-determinism
-    breaks the standard cryptographic playbook: encrypting the template
-    directly destroys matchability; brute-force homomorphic comparison is too
-    slow to deploy.
+    Passwords match exactly. Biometric embeddings — and, more broadly, the
+    feature vectors inside any modern recognizer — do not: every measurement
+    carries a different noise realization, and the resulting embedding
+    drifts. This non-determinism breaks the standard cryptographic playbook,
+    but the right repair depends on the deployment.
   </p>
   <p>
-    Biometric template protection (BTP) wraps embeddings in transformations
-    that remain matchable but, ideally, irreversible. The catch is that many
-    published schemes — locality-sensitive hashing, random projection,
-    learned transformations — turn out to be reversible under modern
-    decoders. My work has produced both <em>schemes</em> and
-    <em>analyses</em>: <strong>IronMask</strong> (CVPR&nbsp;2021) and
+    In <strong>verification</strong> (1:1 matching), the user holds their own
+    enrolled template together with any keys protecting it; encrypting that
+    template offers little real protection, since an attacker reaching the
+    user-side store can reach the key as well. The interesting question is
+    instead whether the embedding can be transformed so that it remains
+    matchable but cannot be inverted into a face — the goal of
+    biometric template protection (BTP). My work on the verification side
+    combines real-valued error-correcting codes with hash functions to
+    protect templates without sacrificing accuracy:
+    <strong>IronMask</strong> (CVPR&nbsp;2021),
     <strong>Deep Face Template Protection in the Wild</strong>
-    (Pattern Recognition&nbsp;2025) combine real-valued error-correcting codes
-    with hash functions to protect templates without sacrificing accuracy;
-    <strong>IDFace</strong> (ICCV&nbsp;2025) brings the same idea to
-    large-scale identification rather than verification; and
-    <strong>SilverMask</strong> (IEEE&nbsp;Access&nbsp;2026) introduces a
-    fine-grained noise-correction mechanism. On the analysis side,
+    (Pattern Recognition&nbsp;2025), and <strong>SilverMask</strong>
+    (IEEE&nbsp;Access&nbsp;2026), the last introducing a fine-grained
+    noise-correction mechanism.
+  </p>
+  <p>
+    In <strong>identification</strong> (1:N search), the server matches a
+    probe against many enrolled templates without holding a secret key, so
+    homomorphic encryption (HE) <em>is</em> a meaningful primitive — the
+    standard assumption that the deciding party holds the key is reasonable
+    at this scale. The catch is cost: a naïve homomorphic distance
+    computation over every template is far too slow to deploy.
+    <strong>IDFace</strong> (ICCV&nbsp;2025) closes that gap with an
+    efficient encoding paired with an almost-isometric transformation,
+    pushing large-scale homomorphic identification into a practical regime.
+  </p>
+  <p>
+    Cutting across both is the question of <em>which</em> transformations
+    are actually irreversible. Many published BTP schemes — locality-
+    sensitive hashing, random projection, learned transformations — turn
+    out to be invertible under modern decoders.
     <strong>IEEE&nbsp;TDSC&nbsp;2025</strong> gives a unified account of
-    <em>when</em> LSH-based protections are reversible — and when they are not.
+    when LSH-based protections leak the underlying template, and when they
+    do not.
   </p>
   <h3>Where it goes next</h3>
   <p>
-    The natural next step is to combine non-cryptographic structures (LSH,
-    learned indices) with cryptographic primitives (FHE, MPC) under a single
-    security analysis. A recent direction connects this to
-    <em>fuzzy private set intersection</em> for high-dimensional cosine
-    similarity — bringing the privacy-preserving retrieval problem into the
-    same geometric framework as the attack work above.
+    Many adjacent problems reduce to the same primitive: securely computing
+    cosine similarity between high-dimensional vectors. Privacy-preserving
+    retrieval for RAG, fuzzy private set intersection, and other
+    high-dimensional similarity-search settings all share the geometry
+    studied above and connect naturally to this line of work.
   </p>
 </section>
 
@@ -131,17 +149,6 @@ description: "Research themes — representation-centric AI security: adversaria
     closed loop in the spirit of GANs: use mathematically grounded attacks to
     generate the worst-case data, then use that data to train recognizers and
     detectors that are demonstrably more robust.
-  </p>
-</section>
-
-<section class="prose">
-  <div class="sec-label">Connecting tissue</div>
-  <p>
-    The four threads share a substrate: the geometry of the embedding space.
-    Once that geometry is taken seriously, attack and defense stop looking
-    like separate problems — they become two sides of the same optimization,
-    with certified robustness as the third constraint, and foundation models
-    as the setting where all three suddenly matter at once.
   </p>
 </section>
 

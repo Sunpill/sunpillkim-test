@@ -16,8 +16,12 @@ description: "Publications by Sunpill Kim — peer-reviewed conference and journ
   </p>
 </div>
 
-{%- comment -%} Conferences {%- endcomment -%}
-{%- assign conf = site.data.publications | where: "category", "conf" | sort: "year" | reverse -%}
+{%- comment -%}
+  Order is taken directly from _data/publications.yml — keep that file in
+  display order (newest first) within each category.
+{%- endcomment -%}
+
+{%- assign conf = site.data.publications | where: "category", "conf" -%}
 {%- if conf.size > 0 -%}
 <section class="pub-group">
   <h2>Conferences</h2>
@@ -27,8 +31,7 @@ description: "Publications by Sunpill Kim — peer-reviewed conference and journ
 </section>
 {%- endif -%}
 
-{%- comment -%} Journals {%- endcomment -%}
-{%- assign journal = site.data.publications | where: "category", "journal" | sort: "year" | reverse -%}
+{%- assign journal = site.data.publications | where: "category", "journal" -%}
 {%- if journal.size > 0 -%}
 <section class="pub-group">
   <h2>Journals</h2>
@@ -38,8 +41,7 @@ description: "Publications by Sunpill Kim — peer-reviewed conference and journ
 </section>
 {%- endif -%}
 
-{%- comment -%} Other (preprints, formal proofs) {%- endcomment -%}
-{%- assign other = site.data.publications | where: "category", "other" | sort: "year" | reverse -%}
+{%- assign other = site.data.publications | where: "category", "other" -%}
 {%- if other.size > 0 -%}
 <section class="pub-group">
   <h2>Other</h2>

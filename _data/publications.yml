@@ -5,9 +5,12 @@
 #  tier:     "top" | "" — controls the yellow highlight
 #
 #  "Top" tier (yellow highlight) is reserved for:
-#    - IEEE S&P, ACM CCS                       (top security)
-#    - NeurIPS, ICCV, ECCV, CVPR, BMVC oral   (top CV / ML)
+#    - IEEE S&P, ACM CCS                          (top security)
+#    - NeurIPS, ICCV, ECCV, CVPR, BMVC oral      (top CV / ML)
 #    - IEEE TPAMI, IEEE TDSC, Pattern Recognition (top journals)
+#
+#  Display order: ENTRIES APPEAR ON THE PAGE IN THE EXACT ORDER
+#  THEY ARE LISTED HERE (within each category). Keep newest first.
 # ============================================================
 
 # ============================================================
@@ -49,6 +52,15 @@
   category: "conf"
   tier: ""
 
+- title: "On the Certifiable Robustness of Face Recognition Systems"
+  authors: "Seunghun Paik, Dongsoo Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "Conference on Information Security and Cryptography (Summer)"
+  venue_short: "CISC-S 2024"
+  year: 2024
+  category: "conf"
+  tier: ""
+  note: "Excellence Paper Award"
+
 - title: "Towards Certifiably Robust Face Recognition"
   authors: "Seunghun Paik, Dongsoo Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
   venue: "European Conference on Computer Vision"
@@ -66,15 +78,6 @@
   tier: "top"
   note: "acceptance 17.8%"
   pdf: "https://www.computer.org/csdl/proceedings-article/sp/2024/313000a161/1Ub24A2RzHi"
-
-- title: "On the Certifiable Robustness of Face Recognition Systems"
-  authors: "Seunghun Paik, Dongsoo Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
-  venue: "Conference on Information Security and Cryptography (Summer)"
-  venue_short: "CISC-S 2024"
-  year: 2024
-  category: "conf"
-  tier: ""
-  note: "Excellence Paper Award"
 
 - title: "Security Analysis on Locality-Sensitive Hashing-based Biometric Template Protection Schemes"
   authors: "Seunghun Paik, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"

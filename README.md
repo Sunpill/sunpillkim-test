@@ -17,7 +17,7 @@ Almost all updates happen by editing YAML data files — no HTML required.
 | Add a publication              | `_data/publications.yml` |
 | Edit the about / hero          | `index.html`             |
 | Edit the research narrative    | `research.html`          |
-| Edit teaching / mentoring      | `teaching.html`          |
+| Edit the others page           | `teaching.html`          |
 | Update navigation links        | `_data/nav.yml`          |
 | Replace the portrait           | `assets/img/portrait.jpg`|
 | Replace the CV                 | `assets/files/cv.pdf`    |

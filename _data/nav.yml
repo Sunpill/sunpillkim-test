@@ -9,8 +9,8 @@
   url: "/research/"
 - name: "publications"
   url: "/publications/"
-- name: "teaching"
-  url: "/teaching/"
+- name: "others"
+  url: "/others/"
 - name: "cv"
   url: "/assets/files/cv.pdf"
   external: true
