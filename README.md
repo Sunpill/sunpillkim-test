@@ -8,8 +8,7 @@ Built with [Jekyll](https://jekyllrb.com/), hosted on
 
 ## Updating content
 
-The site is deliberately small. Almost all updates happen by editing
-YAML data files — no HTML required.
+Almost all updates happen by editing YAML data files — no HTML required.
 
 | What you want to do | Edit |
 |---|---|
@@ -17,7 +16,7 @@ YAML data files — no HTML required.
 | Add a publication              | `_data/publications.yml` |
 | Edit the about / hero          | `index.html`             |
 | Edit the research narrative    | `research.html`          |
-| Edit the teaching philosophy   | `teaching.html`          |
+| Edit teaching / mentoring      | `teaching.html`          |
 | Update navigation links        | `_data/nav.yml`          |
 | Replace the portrait           | `assets/img/portrait.jpg`|
 | Replace the CV                 | `assets/files/cv.pdf`    |
@@ -26,18 +25,18 @@ YAML data files — no HTML required.
 ### Adding a news item
 
 ```yaml
-- date:    "2026-05"
-  venue:   "NeurIPS 2025"
+- date:    "2026-05-12"
+  venue:   "NeurIPS 2026"
   tier:    "top"          # "top" gives the yellow highlight
   title:   "Paper title"
   authors: "<span class='me'>S. Kim</span>, et al."
 ```
 
-For non-paper news (awards, talks), use `body:` instead of
+For non-paper news (awards, talks, project starts), use `body:` instead of
 `venue/title/authors`:
 
 ```yaml
-- date:  "2026-02"
+- date:  "2026-02-05"
   body:  "Received the <strong>X Award</strong>."
 ```
 
@@ -49,14 +48,40 @@ For non-paper news (awards, talks), use `body:` instead of
   venue: "Full venue name"
   venue_short: "NeurIPS 2025"
   year: 2025
-  category: "top-conf"   # top-conf | top-journal | conf | journal | preprint
+  category: "top-conf"   # top-conf | top-journal | conf | journal | preprint | other
   tier: "top"            # "top" for highlighted venues
   pdf: "https://..."     # optional
   code: "https://..."    # optional
+  note: "co-first author · acceptance 24%"   # optional, free-form
 ```
 
 Publications are auto-grouped on the page by `category`, sorted
 newest-first within each group.
+
+## Deployment
+
+This repo can be deployed in two configurations. The `_config.yml` documents
+both. Switch the `url` and `baseurl` values when moving between them.
+
+### (1) Test deployment
+
+`https://sunpill.github.io/sunpillkim-test/`
+
+```yaml
+url: "https://sunpill.github.io"
+baseurl: "/sunpillkim-test"
+```
+
+The `CNAME` file should be **deleted** in this scenario.
+
+### (2) Production at sunpillkim.com
+
+```yaml
+url: "https://sunpillkim.com"
+baseurl: ""
+```
+
+The `CNAME` file should contain `sunpillkim.com`.
 
 ## Running locally
 
@@ -65,11 +90,6 @@ bundle install
 bundle exec jekyll serve --livereload
 # open http://localhost:4000
 ```
-
-## Deploying
-
-Pushes to `main` are built automatically by GitHub Pages. The custom
-domain is configured via the `CNAME` file at the repo root.
 
 ## License
 

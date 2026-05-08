@@ -1,77 +1,187 @@
 # ============================================================
 #  Publications
 #  ----------------------------------------------------------
-#  Each entry has:
-#    title:    paper title
-#    authors:  HTML allowed; wrap yourself with <span class="me">
-#    venue:    full venue name (e.g. "Advances in Neural Information
-#              Processing Systems (NeurIPS)")
-#    venue_short: short tag for the badge (e.g. "NeurIPS 2025")
-#    year:     integer
-#    category: "top-conf" | "top-journal" | "conf" | "journal" | "preprint"
-#    tier:     "top" | "" — controls the yellow highlight
-#    pdf:      optional URL
-#    code:     optional URL
-#    project:  optional URL
-#    bibtex:   optional URL or anchor
-#    note:     optional, e.g. "co-first author", "Spotlight"
+#  category: top-conf | top-journal | conf | journal | preprint | other
+#  tier:     "top" | "" — controls the yellow highlight
+#
+#  "Top" tier (yellow highlight) is reserved for:
+#    - IEEE S&P, ACM CCS (security)
+#    - NeurIPS, ICCV, ECCV, CVPR, BMVC oral (CV/ML)
+#    - IEEE TPAMI, IEEE T-BIOM, IEEE TDSC (top journals)
 # ============================================================
 
-- title: "Casting the Net! Revisiting MasterFace Impersonation Attacks on Face Recognition Systems"
-  authors: "S. Paik*, <span class='me'>S. Kim</span>*, C. Hwang, J. H. Seo"
+# ============================================================
+#  Conferences
+# ============================================================
+
+- title: "Casting the Net! Revisiting MasterFace Impersonation Attacks"
+  authors: "Seunghun Paik*, <span class='me'>Sunpill Kim</span>*, Chanwoo Hwang, Jae Hong Seo"
   venue: "ACM Conference on Computer and Communications Security"
   venue_short: "ACM CCS 2026"
   year: 2026
   category: "top-conf"
   tier: "top"
-  note: "co-first author"
+  note: "to appear · top-tier security · co-first author"
 
-- title: "SilverMask: Face Template Protection with Fine-Grained Noise-Correction"
-  authors: "M. Kim*, S. Paik*, S. Baek, S. Shin, <span class='me'>S. Kim</span>, J. H. Seo"
-  venue: "IEEE Access"
-  venue_short: "IEEE Access"
-  year: 2026
-  category: "journal"
-  tier: ""
-
-- title: "Towards Certifiably Robust Face Recognition: Analyses and Improvements"
-  authors: "S. Paik, D. Kim, C. Hwang, <span class='me'>S. Kim</span>, J. H. Seo"
-  venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
-  venue_short: "IEEE T-BIOM 2025"
-  year: 2025
-  category: "top-journal"
-  tier: ""
-
-- title: "On the Reversibility of LSH-based Biometric Template Protections"
-  authors: "<span class='me'>S. Kim</span>, et al."
-  venue: "IEEE Transactions on Dependable and Secure Computing"
-  venue_short: "IEEE TDSC 2025"
-  year: 2025
-  category: "top-journal"
-  tier: ""
-
-- title: "Non-Adaptive Adversarial Face Generation"
-  authors: "<span class='me'>S. Kim</span>, S. Paik, C. Hwang, M. Kim, J. H. Seo"
-  venue: "Advances in Neural Information Processing Systems"
+- title: "Non-Adaptive Adversarial Face Generation in the Dark"
+  authors: "<span class='me'>Sunpill Kim</span>, Seunghun Paik, Chanwoo Hwang, Minsu Kim, Jae Hong Seo"
+  venue: "Conference on Neural Information Processing Systems"
   venue_short: "NeurIPS 2025"
   year: 2025
   category: "top-conf"
   tier: "top"
+  note: "top-tier ML · acceptance 24.5%"
 
 - title: "IDFace: Face Template Protection for Efficient and Secure Identification"
-  authors: "<span class='me'>S. Kim</span>, et al."
+  authors: "<span class='me'>Sunpill Kim</span>*, Seunghun Paik*, Chanwoo Hwang, Dongsu Kim, Junbum Shin, Jae Hong Seo"
   venue: "International Conference on Computer Vision"
   venue_short: "ICCV 2025"
   year: 2025
   category: "top-conf"
   tier: "top"
+  note: "top-tier vision · acceptance 24.2% · co-first author"
+
+- title: "A Survey of Model Inversion Attacks on Image Domain"
+  authors: "Changjin Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "International Conference on ICT Convergence"
+  venue_short: "IEEE ICTC 2025"
+  year: 2025
+  category: "conf"
+  tier: ""
+
+- title: "Towards Certifiably Robust Face Recognition"
+  authors: "Seunghun Paik, Dongsoo Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "European Conference on Computer Vision"
+  venue_short: "ECCV 2024"
+  year: 2024
+  category: "top-conf"
+  tier: "top"
+  note: "top-tier vision · acceptance 27.9%"
 
 - title: "Scores Tell Everything about Bob: Non-adaptive Face Reconstruction on Face Recognition Systems"
-  authors: "<span class='me'>S. Kim</span>, et al."
+  authors: "<span class='me'>Sunpill Kim</span>, Yong Kiam Tan, Bora Jeong, Soumik Mondal, Khin Mi Mi Aung, Jae Hong Seo"
   venue: "IEEE Symposium on Security and Privacy"
   venue_short: "IEEE S&P 2024"
   year: 2024
   category: "top-conf"
   tier: "top"
+  note: "top-tier security · acceptance 17.8%"
+  pdf: "https://www.computer.org/csdl/proceedings-article/sp/2024/313000a161/1Ub24A2RzHi"
 
-# Add older works below as you like — same structure.
+- title: "Analysis on Locality Sensitive Hashing-based Biometric Template Protection Schemes"
+  authors: "Seunghun Paik, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "British Machine Vision Conference"
+  venue_short: "BMVC 2023"
+  year: 2023
+  category: "top-conf"
+  tier: "top"
+  note: "Oral · acceptance 9%"
+  pdf: "https://papers.bmvc2023.org/0535.pdf"
+
+- title: "On the Certifiable Robustness of Face Recognition Systems"
+  authors: "Seunghun Paik, Dongsoo Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "Conference on Information Security and Cryptography (Summer)"
+  venue_short: "CISC-S 2024"
+  year: 2024
+  category: "conf"
+  tier: ""
+  note: "Excellence Paper Award (Director, NSR)"
+
+- title: "IronMask: Modular Architecture for Protecting Deep Face Template"
+  authors: "<span class='me'>Sunpill Kim</span>, Yunseong Jeong, Jinsu Kim, Jungkon Kim, Hyung Tae Lee, Jae Hong Seo"
+  venue: "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+  venue_short: "CVPR 2021"
+  year: 2021
+  category: "top-conf"
+  tier: "top"
+  note: "top-tier vision · acceptance 23.7%"
+  pdf: "https://openaccess.thecvf.com/content/CVPR2021/html/Kim_IronMask_Modular_Architecture_for_Protecting_Deep_Face_Template_CVPR_2021_paper.html"
+
+# ============================================================
+#  Journals
+# ============================================================
+
+- title: "SilverMask: Face Template Protection with Fine-Grained Noise-Correction"
+  authors: "Minsu Kim*, Seunghun Paik*, Seong-ae Baek, Sangyun Shin, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "IEEE Access"
+  venue_short: "IEEE Access 2026"
+  year: 2026
+  category: "journal"
+  tier: ""
+  note: "to appear"
+
+- title: "Doubly Efficient Fuzzy Private Set Intersection for High-Dimensional Data with Cosine Similarity"
+  authors: "Hyunjung Son, Seunghun Paik, Yunki Kim, <span class='me'>Sunpill Kim</span>, Heewon Chung, Jae Hong Seo"
+  venue: "IEEE Access"
+  venue_short: "IEEE Access 2026"
+  year: 2026
+  category: "journal"
+  tier: ""
+  note: "to appear"
+
+- title: "Towards Certifiably Robust Face Recognition: Analyses and Improvements"
+  authors: "Seunghun Paik, Dongsoo Kim, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
+  venue_short: "IEEE T-BIOM 2025"
+  year: 2025
+  category: "top-journal"
+  tier: "top"
+  note: "IF 5.0"
+
+- title: "On the Reversibility of Locality-Sensitive Hashing-based Biometric Template Protections"
+  authors: "Seunghun Paik, Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "IEEE Transactions on Dependable and Secure Computing"
+  venue_short: "IEEE TDSC 2025"
+  year: 2025
+  category: "top-journal"
+  tier: "top"
+  note: "IF 7.5"
+
+- title: "Deep Face Template Protection in the Wild"
+  authors: "<span class='me'>Sunpill Kim</span>, Hoyong Shin, Jae Hong Seo"
+  venue: "Pattern Recognition"
+  venue_short: "Pattern Recognition 2025"
+  year: 2025
+  category: "journal"
+  tier: ""
+  note: "vol. 162, 111336 · IF 7.6"
+  pdf: "https://www.sciencedirect.com/science/article/abs/pii/S0031320324010872"
+
+- title: "Analysis on Secure Triplet Loss"
+  authors: "Bora Jeong, <span class='me'>Sunpill Kim</span>, Seunghun Paik, Jae Hong Seo"
+  venue: "IEEE Access"
+  venue_short: "IEEE Access 2022"
+  year: 2022
+  category: "journal"
+  tier: ""
+  note: "vol. 10, pp. 124355-124362"
+  pdf: "https://ieeexplore.ieee.org/document/9965373"
+
+# ============================================================
+#  Others (formal proofs, under review)
+# ============================================================
+
+- title: "Scores Know Bob's Voice: Non-Adaptive Impersonation Attack"
+  authors: "Chanwoo Hwang, <span class='me'>Sunpill Kim</span>, Yong Kiam Tan, Tianchi Liu, Dongsoo Kim, Seunghun Paik, Mondal Soumik, Khin Mi Mi Aung, Jae Hong Seo"
+  venue: "Under review"
+  venue_short: "Under review"
+  year: 2025
+  category: "preprint"
+  tier: ""
+
+- title: "On the Security-Accuracy Trade-off of Hash-based Face Template Protections"
+  authors: "Seunghun Paik, Minsu Kim, <span class='me'>Sunpill Kim</span>, Jae Hong Seo"
+  venue: "Under review"
+  venue_short: "Under review"
+  year: 2024
+  category: "preprint"
+  tier: ""
+
+- title: "Formalization of the Schwartz-Zippel Lemma"
+  authors: "<span class='me'>Sunpill Kim</span>*, Yong Kiam Tan*"
+  venue: "Archive of Formal Proofs"
+  venue_short: "AFP 2023"
+  year: 2023
+  category: "other"
+  tier: ""
+  note: "co-first author · formal proof in Isabelle/HOL"

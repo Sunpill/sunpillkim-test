@@ -7,6 +7,7 @@ description: >-
   Personal website of Sunpill Kim — Ph.D. candidate in Applied
   Mathematics at Hanyang University, working on the security and
   vulnerability of metric-learning-based recognition systems.
+
 author:
   name: "Sunpill Kim"
   korean: "김선필 · 金善必"
@@ -16,6 +17,23 @@ author:
   github: "https://github.com/Sunpill"
   orcid: "https://orcid.org/YOUR_ORCID"
 
+# ============================================================
+#  URL settings
+#  ----------------------------------------------------------
+#  IMPORTANT — there are TWO scenarios, swap based on where
+#  the site is deployed:
+#
+#  (1) TEST DEPLOYMENT at sunpill.github.io/sunpillkim-test/
+#      url:     "https://sunpill.github.io"
+#      baseurl: "/sunpillkim-test"
+#
+#  (2) PRODUCTION at sunpillkim.com  (your real site)
+#      url:     "https://sunpillkim.com"
+#      baseurl: ""
+#
+#  Currently set to (1) — test repo. When you move to the real
+#  repo, swap to (2) and bring back the CNAME file.
+# ============================================================
 url: "https://sunpill.github.io"
 baseurl: "/sunpillkim-test"
 
@@ -26,7 +44,6 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:path/
 
-# Pretty URLs (e.g. /publications/ instead of /publications.html)
 defaults:
   - scope: { path: "" }
     values:
@@ -50,7 +67,7 @@ plugins:
   - jekyll-sitemap
 
 # ============================================================
-#  SEO defaults
+#  SEO
 # ============================================================
 twitter:
   username: ""

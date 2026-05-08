@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ""
-description: "Sunpill Kim — Ph.D. candidate at Hanyang University working on AI security, adversarial attacks, and biometric template protection."
+description: "Sunpill Kim — Ph.D. candidate at Hanyang University working on AI security, adversarial attacks on face recognition, and biometric template protection."
 ---
 
 <div class="hero">
@@ -39,28 +39,37 @@ description: "Sunpill Kim — Ph.D. candidate at Hanyang University working on A
     <a href="https://sites.google.com/site/jhsbhs/">Jae Hong Seo</a>.
   </p>
   <p>
-    From January 2023 to January 2024 I was an
+    From January&nbsp;2023 to January&nbsp;2024 I was an
     <a href="https://www.a-star.edu.sg/scholarships/home/international-awards/astar-research-attachment-programme-arap">ARAP</a>
     scholar at the
     <a href="https://www.a-star.edu.sg/i2r">A*STAR Institute for Infocomm Research</a>
     (Singapore), working with Dr.&nbsp;Khin Mi Mi Aung and Dr.&nbsp;Tan Yong Kiam.
   </p>
   <p>
-    My work spans <strong>adversarial attacks</strong> on face recognition systems,
-    <strong>biometric template protection</strong>, and
-    <strong>certified robustness</strong>—bridging mathematical rigor with the
-    practical security of deployed AI systems. See the
-    <a href="{{ '/research/' | relative_url }}">research</a> page for an overview
-    of the threads, or the
+    My research sits at the intersection of <strong>applied mathematics</strong>,
+    <strong>biometric security</strong>, and <strong>computer vision</strong>. I work
+    on adversarial attacks against face recognition, biometric template protection,
+    and certified robustness — bridging mathematical rigor with the practical
+    security of deployed AI systems. See the
+    <a href="{{ '/research/' | relative_url }}">research</a> page for an overview of
+    the threads, or the
     <a href="{{ '/publications/' | relative_url }}">publications</a> page for the
     full list of papers.
+  </p>
+  <p>
+    I have served as a reviewer for CVPR&nbsp;2024–26, and have been recognized as a
+    <em>1st Graduate Presidential Science Scholarship</em> recipient (the only finalist
+    in the mathematics field), with a Hanyang Outstanding Ph.D. Dissertation Award
+    (2026) and several national cryptographic technology contest awards. I have led
+    a National Research Foundation of Korea (NRF) project as Principal Investigator
+    on secure biometric authentication.
   </p>
 </section>
 
 <section>
   <div class="sec-label">Recent</div>
   <ul class="news-list">
-    {%- assign recent = site.data.news | slice: 0, 6 -%}
+    {%- assign recent = site.data.news | slice: 0, 7 -%}
     {%- for n in recent -%}
       <li>
         <span class="date">{{ n.date | date: "%b %Y" }}</span>
