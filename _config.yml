@@ -16,8 +16,8 @@ author:
   github: "https://github.com/Sunpill"
   orcid: "https://orcid.org/YOUR_ORCID"
 
-url: "https://sunpillkim.com"
-baseurl: ""
+url: "https://sunpill.github.io"
+baseurl: "/sunpillkim-test"
 
 # ============================================================
 #  Build
