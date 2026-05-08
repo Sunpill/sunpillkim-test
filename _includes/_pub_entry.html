@@ -1,0 +1,19 @@
+{%- assign p = include.p -%}
+<article class="pub">
+  <div class="pub-title">{{ p.title }}</div>
+  <div class="pub-authors">{{ p.authors }}</div>
+  <div class="pub-meta">
+    <span class="pub-venue {% if p.tier == 'top' %}top{% endif %}">{{ p.venue_short }}</span>
+    {%- if p.note -%}
+      <span class="pub-note">· {{ p.note }}</span>
+    {%- endif -%}
+    {%- if p.pdf or p.code or p.project or p.bibtex -%}
+      <span class="pub-links">
+        {%- if p.pdf -%}<a href="{{ p.pdf }}">pdf</a>{%- endif -%}
+        {%- if p.code -%} <a href="{{ p.code }}">code</a>{%- endif -%}
+        {%- if p.project -%} <a href="{{ p.project }}">project</a>{%- endif -%}
+        {%- if p.bibtex -%} <a href="{{ p.bibtex }}">bibtex</a>{%- endif -%}
+      </span>
+    {%- endif -%}
+  </div>
+</article>

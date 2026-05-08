@@ -1,0 +1,14 @@
+<header class="topbar">
+  <a href="{{ '/' | relative_url }}" class="name" style="border:none;">sunpill kim</a>
+  <nav>
+    {%- for item in site.data.nav -%}
+      {%- assign current = false -%}
+      {%- if page.url == item.url -%}{%- assign current = true -%}{%- endif -%}
+      {%- if item.url != '/' and page.url contains item.url -%}{%- assign current = true -%}{%- endif -%}
+
+      <a href="{{ item.url | relative_url }}"
+         {% if item.external %}target="_blank" rel="noopener"{% endif %}
+         class="{% if current %}active{% endif %}">{{ item.name }}{% if item.external %} ↗{% endif %}</a>
+    {%- endfor -%}
+  </nav>
+</header>

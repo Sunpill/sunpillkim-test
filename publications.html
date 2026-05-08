@@ -1,0 +1,69 @@
+---
+layout: default
+title: "Publications"
+permalink: /publications/
+description: "Publications by Sunpill Kim — peer-reviewed conference and journal papers."
+---
+
+<div class="page-header">
+  <h1>Publications</h1>
+  <p class="lede">
+    Grouped by venue tier. <span class="venue top" style="background:#fef3c7;padding:0 4px;font-weight:600;">Highlighted</span>
+    entries are top-tier security or vision venues. * = co-first author.
+  </p>
+</div>
+
+{%- comment -%} ============ Group: Top conferences ============ {%- endcomment -%}
+{%- assign top_conf = site.data.publications | where: "category", "top-conf" | sort: "year" | reverse -%}
+{%- if top_conf.size > 0 -%}
+<section class="pub-group">
+  <h2>Top conferences</h2>
+  {%- for p in top_conf -%}
+    {%- include _pub_entry.html p=p -%}
+  {%- endfor -%}
+</section>
+{%- endif -%}
+
+{%- comment -%} ============ Group: Top journals ============ {%- endcomment -%}
+{%- assign top_journal = site.data.publications | where: "category", "top-journal" | sort: "year" | reverse -%}
+{%- if top_journal.size > 0 -%}
+<section class="pub-group">
+  <h2>Top journals</h2>
+  {%- for p in top_journal -%}
+    {%- include _pub_entry.html p=p -%}
+  {%- endfor -%}
+</section>
+{%- endif -%}
+
+{%- comment -%} ============ Group: Other conferences ============ {%- endcomment -%}
+{%- assign conf = site.data.publications | where: "category", "conf" | sort: "year" | reverse -%}
+{%- if conf.size > 0 -%}
+<section class="pub-group">
+  <h2>Conferences</h2>
+  {%- for p in conf -%}
+    {%- include _pub_entry.html p=p -%}
+  {%- endfor -%}
+</section>
+{%- endif -%}
+
+{%- comment -%} ============ Group: Other journals ============ {%- endcomment -%}
+{%- assign journal = site.data.publications | where: "category", "journal" | sort: "year" | reverse -%}
+{%- if journal.size > 0 -%}
+<section class="pub-group">
+  <h2>Journals</h2>
+  {%- for p in journal -%}
+    {%- include _pub_entry.html p=p -%}
+  {%- endfor -%}
+</section>
+{%- endif -%}
+
+{%- comment -%} ============ Group: Preprints ============ {%- endcomment -%}
+{%- assign preprint = site.data.publications | where: "category", "preprint" | sort: "year" | reverse -%}
+{%- if preprint.size > 0 -%}
+<section class="pub-group">
+  <h2>Preprints</h2>
+  {%- for p in preprint -%}
+    {%- include _pub_entry.html p=p -%}
+  {%- endfor -%}
+</section>
+{%- endif -%}

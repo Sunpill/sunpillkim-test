@@ -1,0 +1,77 @@
+# ============================================================
+#  Publications
+#  ----------------------------------------------------------
+#  Each entry has:
+#    title:    paper title
+#    authors:  HTML allowed; wrap yourself with <span class="me">
+#    venue:    full venue name (e.g. "Advances in Neural Information
+#              Processing Systems (NeurIPS)")
+#    venue_short: short tag for the badge (e.g. "NeurIPS 2025")
+#    year:     integer
+#    category: "top-conf" | "top-journal" | "conf" | "journal" | "preprint"
+#    tier:     "top" | "" — controls the yellow highlight
+#    pdf:      optional URL
+#    code:     optional URL
+#    project:  optional URL
+#    bibtex:   optional URL or anchor
+#    note:     optional, e.g. "co-first author", "Spotlight"
+# ============================================================
+
+- title: "Casting the Net! Revisiting MasterFace Impersonation Attacks on Face Recognition Systems"
+  authors: "S. Paik*, <span class='me'>S. Kim</span>*, C. Hwang, J. H. Seo"
+  venue: "ACM Conference on Computer and Communications Security"
+  venue_short: "ACM CCS 2026"
+  year: 2026
+  category: "top-conf"
+  tier: "top"
+  note: "co-first author"
+
+- title: "SilverMask: Face Template Protection with Fine-Grained Noise-Correction"
+  authors: "M. Kim*, S. Paik*, S. Baek, S. Shin, <span class='me'>S. Kim</span>, J. H. Seo"
+  venue: "IEEE Access"
+  venue_short: "IEEE Access"
+  year: 2026
+  category: "journal"
+  tier: ""
+
+- title: "Towards Certifiably Robust Face Recognition: Analyses and Improvements"
+  authors: "S. Paik, D. Kim, C. Hwang, <span class='me'>S. Kim</span>, J. H. Seo"
+  venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
+  venue_short: "IEEE T-BIOM 2025"
+  year: 2025
+  category: "top-journal"
+  tier: ""
+
+- title: "On the Reversibility of LSH-based Biometric Template Protections"
+  authors: "<span class='me'>S. Kim</span>, et al."
+  venue: "IEEE Transactions on Dependable and Secure Computing"
+  venue_short: "IEEE TDSC 2025"
+  year: 2025
+  category: "top-journal"
+  tier: ""
+
+- title: "Non-Adaptive Adversarial Face Generation"
+  authors: "<span class='me'>S. Kim</span>, S. Paik, C. Hwang, M. Kim, J. H. Seo"
+  venue: "Advances in Neural Information Processing Systems"
+  venue_short: "NeurIPS 2025"
+  year: 2025
+  category: "top-conf"
+  tier: "top"
+
+- title: "IDFace: Face Template Protection for Efficient and Secure Identification"
+  authors: "<span class='me'>S. Kim</span>, et al."
+  venue: "International Conference on Computer Vision"
+  venue_short: "ICCV 2025"
+  year: 2025
+  category: "top-conf"
+  tier: "top"
+
+- title: "Scores Tell Everything about Bob: Non-adaptive Face Reconstruction on Face Recognition Systems"
+  authors: "<span class='me'>S. Kim</span>, et al."
+  venue: "IEEE Symposium on Security and Privacy"
+  venue_short: "IEEE S&P 2024"
+  year: 2024
+  category: "top-conf"
+  tier: "top"
+
+# Add older works below as you like — same structure.

@@ -1,0 +1,16 @@
+# Navigation links shown in the top bar.
+# Order matters. `external: true` opens in a new tab.
+
+- name: "about"
+  url: "/"
+- name: "news"
+  url: "/news/"
+- name: "research"
+  url: "/research/"
+- name: "publications"
+  url: "/publications/"
+- name: "teaching"
+  url: "/teaching/"
+- name: "cv"
+  url: "/assets/files/cv.pdf"
+  external: true

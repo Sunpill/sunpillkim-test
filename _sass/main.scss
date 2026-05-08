@@ -1,0 +1,419 @@
+// ============================================================
+//  sunpillkim.com — main stylesheet
+//  Aesthetic: minimal academic. Warm ivory paper, serif body,
+//  monospace metadata, single indigo accent, soft yellow
+//  highlighter for top-tier venues.
+// ============================================================
+
+// ---------- Tokens ------------------------------------------
+$ink:        #1a1a1a;
+$ink-soft:   #4a4a4a;
+$ink-mute:   #8a8a8a;
+$paper:      #fbfaf7;
+$paper-warm: #f3f1ec;
+$rule:       #e4e1da;
+$rule-soft:  #efece6;
+$accent:     #1f3a8a;        // deep indigo
+$highlight:  #fef3c7;        // soft yellow
+
+$serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+$mono:  'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+$measure:    760px;
+$measure-narrow: 640px;
+
+// ---------- Reset (minimal) ---------------------------------
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: $serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: $ink;
+  background: $paper;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'onum' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+// ---------- Links -------------------------------------------
+a {
+  color: $accent;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s ease, color .15s ease;
+}
+a:hover { border-bottom-color: $accent; }
+
+// ---------- Layout ------------------------------------------
+.site {
+  max-width: $measure;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+// ---------- Top bar -----------------------------------------
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 32px 0 24px;
+  border-bottom: 1px solid $rule;
+  margin-bottom: 64px;
+
+  .name {
+    font-family: $mono;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: $ink;
+  }
+
+  nav {
+    display: flex;
+    gap: 28px;
+    font-family: $mono;
+    font-size: 13px;
+  }
+  nav a {
+    color: $ink-soft;
+    border-bottom: none;
+    position: relative;
+  }
+  nav a:hover { color: $accent; }
+  nav a::before {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1px;
+    background: $accent;
+    transition: width .2s ease;
+  }
+  nav a:hover::before { width: 100%; }
+  nav a.active { color: $ink; }
+  nav a.active::before { width: 100%; background: $ink; }
+}
+
+// ---------- Hero (homepage) ---------------------------------
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 80px;
+
+  h1 {
+    font-family: $serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+  }
+  .pronoun {
+    font-family: $mono;
+    font-size: 12px;
+    color: $ink-mute;
+    margin-bottom: 24px;
+  }
+  .role {
+    font-size: 17px;
+    color: $ink-soft;
+    margin-bottom: 28px;
+    max-width: 28em;
+  }
+  .role em { font-style: italic; color: $ink; }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-family: $mono;
+    font-size: 13px;
+  }
+  .links a {
+    color: $ink-soft;
+    border-bottom: 1px solid $rule;
+  }
+  .links a:hover { color: $accent; border-bottom-color: $accent; }
+}
+
+.portrait {
+  width: 140px;
+  height: 175px;
+  background: $paper-warm;
+  border: 1px solid $rule;
+  object-fit: cover;
+}
+
+// ---------- Page header (non-home pages) --------------------
+.page-header {
+  margin-bottom: 56px;
+
+  h1 {
+    font-family: $serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  .lede {
+    color: $ink-soft;
+    max-width: 32em;
+  }
+}
+
+// ---------- Section -----------------------------------------
+section { margin-bottom: 80px; }
+
+.sec-label {
+  font-family: $mono;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $ink-mute;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sec-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: $rule;
+}
+
+// ---------- About prose -------------------------------------
+.prose {
+  p { margin-bottom: 1em; }
+  p:last-child { margin-bottom: 0; }
+  strong, b { font-weight: 600; }
+  em, i { font-style: italic; }
+  ul, ol { margin: 0 0 1em 1.2em; }
+  li { margin-bottom: 0.3em; }
+  h2 {
+    font-family: $serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 2em 0 0.6em;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: $serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 1.6em 0 0.4em;
+  }
+}
+
+// ---------- News list ---------------------------------------
+.news-list {
+  list-style: none;
+  border-top: 1px solid $rule;
+
+  li {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid $rule;
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+
+  .date {
+    font-family: $mono;
+    font-size: 12px;
+    color: $ink-mute;
+    padding-top: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .body { color: $ink; }
+
+  .venue {
+    font-weight: 600;
+    color: $ink;
+    &.top {
+      background: $highlight;
+      padding: 0 4px;
+    }
+  }
+
+  .ptitle {
+    font-style: italic;
+    color: $ink-soft;
+    display: block;
+    margin-top: 2px;
+    font-size: 14.5px;
+  }
+
+  .me { font-weight: 600; }
+}
+
+// "Show more" / link to full news page
+.more {
+  margin-top: 24px;
+  font-family: $mono;
+  font-size: 12px;
+  color: $ink-mute;
+  &::before { content: '→ '; }
+  a { color: $ink-mute; border: none; }
+  a:hover { color: $accent; }
+}
+
+// ---------- Publications list -------------------------------
+.pub-group {
+  margin-bottom: 56px;
+
+  h2 {
+    font-family: $mono;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $ink-mute;
+    margin-bottom: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $rule;
+  }
+}
+
+.pub {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 18px 0;
+  border-bottom: 1px solid $rule-soft;
+  font-size: 15.5px;
+  line-height: 1.5;
+
+  &:last-child { border-bottom: none; }
+
+  .pub-title {
+    font-weight: 600;
+    color: $ink;
+  }
+  .pub-authors {
+    color: $ink-soft;
+    font-size: 14.5px;
+  }
+  .pub-meta {
+    font-family: $mono;
+    font-size: 12px;
+    color: $ink-mute;
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    align-items: center;
+  }
+  .pub-venue {
+    font-weight: 500;
+    color: $ink-soft;
+    &.top {
+      background: $highlight;
+      color: $ink;
+      padding: 1px 5px;
+    }
+  }
+  .pub-note {
+    color: $ink-mute;
+    font-style: italic;
+  }
+  .pub-links a {
+    color: $ink-soft;
+    border-bottom: 1px solid $rule;
+    padding-bottom: 1px;
+  }
+  .pub-links a:hover { color: $accent; border-bottom-color: $accent; }
+  .me { font-weight: 600; color: $ink; }
+}
+
+// ---------- Footer ------------------------------------------
+.footer {
+  margin-top: 96px;
+  padding: 32px 0 48px;
+  border-top: 1px solid $rule;
+  font-family: $mono;
+  font-size: 12px;
+  color: $ink-mute;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  a { color: $ink-mute; }
+  a:hover { color: $accent; }
+}
+
+// ---------- Subtle entrance ---------------------------------
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero, .page-header, section {
+  animation: rise .45s ease-out backwards;
+}
+.hero, .page-header { animation-delay: .05s; }
+section:nth-of-type(1) { animation-delay: .12s; }
+section:nth-of-type(2) { animation-delay: .20s; }
+section:nth-of-type(3) { animation-delay: .28s; }
+section:nth-of-type(4) { animation-delay: .36s; }
+
+// ---------- Responsive --------------------------------------
+@media (max-width: $measure-narrow) {
+  body { font-size: 16px; }
+
+  .site { padding: 0 22px; }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding-top: 24px;
+    margin-bottom: 44px;
+    nav { flex-wrap: wrap; gap: 14px 18px; }
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+
+    h1 { font-size: 32px; }
+  }
+  .portrait {
+    width: 110px;
+    height: 138px;
+    order: -1;
+  }
+
+  section { margin-bottom: 56px; }
+
+  .news-list li {
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    font-size: 14.5px;
+  }
+  .news-list .date { font-size: 11px; }
+  .news-list .ptitle { font-size: 13.5px; }
+
+  .pub { font-size: 15px; }
+
+  .page-header h1 { font-size: 26px; }
+}

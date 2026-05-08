@@ -1,0 +1,82 @@
+---
+layout: default
+title: ""
+description: "Sunpill Kim — Ph.D. candidate at Hanyang University working on AI security, adversarial attacks, and biometric template protection."
+---
+
+<div class="hero">
+  <div>
+    <h1>Sunpill Kim</h1>
+    <div class="pronoun">{{ site.author.korean }}</div>
+    <p class="role">
+      Ph.D. candidate in Applied Mathematics at <em>{{ site.author.affiliation }}</em>,
+      working on the security and vulnerability of metric-learning–based recognition
+      systems — adversarial attacks, biometric template protection, and the math
+      underneath.
+    </p>
+    <div class="links">
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      <a href="{{ '/assets/files/cv.pdf' | relative_url }}">CV</a>
+      <a href="{{ site.author.scholar }}">Scholar</a>
+      <a href="{{ site.author.github }}">GitHub</a>
+    </div>
+  </div>
+  <img class="portrait"
+       src="{{ '/assets/img/portrait.jpg' | relative_url }}"
+       alt="Sunpill Kim"
+       onerror="this.style.background='#f3f1ec';this.removeAttribute('src');">
+</div>
+
+<section class="prose">
+  <div class="sec-label">About</div>
+  <p>
+    I received my B.S. in Mathematics from
+    <a href="https://math.hanyang.ac.kr/">Hanyang University</a> and will receive my
+    Ph.D. in Applied Mathematics from the same institution in February&nbsp;2026.
+    Since July&nbsp;2018, I have been a member of the
+    <a href="https://cryptology-algorithm-lab.github.io/">Cryptology &amp; Algorithm Lab</a>,
+    advised by Professor
+    <a href="https://sites.google.com/site/jhsbhs/">Jae Hong Seo</a>.
+  </p>
+  <p>
+    From January 2023 to January 2024 I was an
+    <a href="https://www.a-star.edu.sg/scholarships/home/international-awards/astar-research-attachment-programme-arap">ARAP</a>
+    scholar at the
+    <a href="https://www.a-star.edu.sg/i2r">A*STAR Institute for Infocomm Research</a>
+    (Singapore), working with Dr.&nbsp;Khin Mi Mi Aung and Dr.&nbsp;Tan Yong Kiam.
+  </p>
+  <p>
+    My work spans <strong>adversarial attacks</strong> on face recognition systems,
+    <strong>biometric template protection</strong>, and
+    <strong>certified robustness</strong>—bridging mathematical rigor with the
+    practical security of deployed AI systems. See the
+    <a href="{{ '/research/' | relative_url }}">research</a> page for an overview
+    of the threads, or the
+    <a href="{{ '/publications/' | relative_url }}">publications</a> page for the
+    full list of papers.
+  </p>
+</section>
+
+<section>
+  <div class="sec-label">Recent</div>
+  <ul class="news-list">
+    {%- assign recent = site.data.news | slice: 0, 6 -%}
+    {%- for n in recent -%}
+      <li>
+        <span class="date">{{ n.date | date: "%b %Y" }}</span>
+        <span class="body">
+          {%- if n.body -%}
+            {{ n.body }}
+          {%- else -%}
+            <span class="venue {% if n.tier == 'top' %}top{% endif %}">{{ n.venue }}</span>
+            accepts <em>{{ n.title }}</em>
+            {%- if n.authors -%}
+              <span class="ptitle">{{ n.authors }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </span>
+      </li>
+    {%- endfor -%}
+  </ul>
+  <p class="more"><a href="{{ '/news/' | relative_url }}">all news</a></p>
+</section>

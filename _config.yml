@@ -1,0 +1,60 @@
+# ============================================================
+#  Site
+# ============================================================
+title: "Sunpill Kim"
+tagline: "Ph.D. candidate · AI Security · Hanyang University"
+description: >-
+  Personal website of Sunpill Kim — Ph.D. candidate in Applied
+  Mathematics at Hanyang University, working on the security and
+  vulnerability of metric-learning-based recognition systems.
+author:
+  name: "Sunpill Kim"
+  korean: "김선필 · 金善必"
+  email: "ksp0352@gmail.com"
+  affiliation: "Hanyang University"
+  scholar: "https://scholar.google.com/citations?user=YOUR_ID"
+  github: "https://github.com/Sunpill"
+  orcid: "https://orcid.org/YOUR_ORCID"
+
+url: "https://sunpillkim.com"
+baseurl: ""
+
+# ============================================================
+#  Build
+# ============================================================
+markdown: kramdown
+highlighter: rouge
+permalink: /:path/
+
+# Pretty URLs (e.g. /publications/ instead of /publications.html)
+defaults:
+  - scope: { path: "" }
+    values:
+      layout: "default"
+
+include:
+  - CNAME
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+
+# ============================================================
+#  Plugins (GitHub Pages whitelist)
+# ============================================================
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# ============================================================
+#  SEO defaults
+# ============================================================
+twitter:
+  username: ""
+social:
+  name: "Sunpill Kim"
+  links:
+    - "https://github.com/Sunpill"

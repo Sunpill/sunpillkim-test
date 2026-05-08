@@ -1,0 +1,90 @@
+---
+layout: default
+title: "Research"
+permalink: /research/
+description: "Research themes — adversarial attacks, template protection, and certified robustness for face recognition."
+---
+
+<div class="page-header">
+  <h1>Research</h1>
+  <p class="lede">
+    The work sits at the intersection of <em>applied mathematics</em>,
+    <em>biometric security</em>, and <em>computer vision</em>. Three threads run
+    through it.
+  </p>
+</div>
+
+<section class="prose">
+  <div class="sec-label">01 · Attack</div>
+  <h2>What scores leak about identity</h2>
+  <p>
+    Modern face recognition systems return a similarity score. Treated naively,
+    the score looks like a single number — a thin channel. But under the right
+    geometric assumptions, repeated queries to a black-box recognizer reveal
+    enough about the underlying embedding space to reconstruct a target face,
+    even <em>without adaptive feedback</em>.
+  </p>
+  <p>
+    My work in this direction shows that <strong>non-adaptive attacks</strong> —
+    attacks that fix all queries up front — can be both query-efficient and
+    surprisingly effective. The published work appeared at
+    <strong>IEEE&nbsp;S&amp;P&nbsp;2024</strong>
+    (<em>Scores Tell Everything about Bob</em>) and
+    <strong>NeurIPS&nbsp;2025</strong>
+    (<em>Non-Adaptive Adversarial Face Generation</em>). A current direction is
+    a budget-splitting strategy framed as an optimization problem over
+    source–target embedding distance, targeting an extension toward
+    <strong>IEEE&nbsp;TPAMI</strong>.
+  </p>
+</section>
+
+<section class="prose">
+  <div class="sec-label">02 · Defense</div>
+  <h2>Template protection that survives</h2>
+  <p>
+    Once an attacker can read the embedding, the natural response is to never
+    store it in the clear. Biometric template protection (BTP) wraps embeddings
+    in transformations that are <em>matchable</em> but, ideally,
+    <em>irreversible</em>. The catch: many published schemes — locality-sensitive
+    hashing, random projections, learned transformations — are reversible under
+    modern decoders.
+  </p>
+  <p>
+    I work on schemes with explicit security analyses, including
+    <strong>IDFace</strong> (ICCV&nbsp;2025), which targets identification
+    rather than verification, and <strong>SilverMask</strong>
+    (IEEE&nbsp;Access&nbsp;2026), which uses fine-grained noise correction to
+    survive against adaptive recovery. A companion line of work
+    (<strong>IEEE&nbsp;TDSC&nbsp;2025</strong>) gives a unified analysis of when
+    LSH-based protections are reversible — and when they are not.
+  </p>
+</section>
+
+<section class="prose">
+  <div class="sec-label">03 · Certify</div>
+  <h2>Robustness with proofs</h2>
+  <p>
+    Empirical robustness is fragile. A recognizer that resists today's attacks
+    can fall to tomorrow's. <strong>Certified robustness</strong> sidesteps the
+    arms race by giving a mathematical guarantee: no adversarial perturbation
+    within a specified radius can flip the decision. Bringing this to face
+    recognition is non-trivial — the standard randomized smoothing toolbox
+    assumes classification, while recognition lives on a metric space.
+  </p>
+  <p>
+    Our recent work (<strong>IEEE&nbsp;T-BIOM&nbsp;2025</strong>,
+    <em>Towards Certifiably Robust Face Recognition</em>) studies how the
+    certified-robustness framework adapts to recognition geometry, and where
+    its assumptions break.
+  </p>
+</section>
+
+<section class="prose">
+  <div class="sec-label">Connecting tissue</div>
+  <p>
+    The three threads share a common substrate: the geometry of the embedding
+    space. Once that geometry is taken seriously, attack and defense stop
+    looking like separate problems — they become two sides of the same
+    optimization, with certification as the third constraint.
+  </p>
+</section>

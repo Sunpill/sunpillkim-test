@@ -1,0 +1,32 @@
+---
+layout: default
+title: "News"
+permalink: /news/
+description: "All news from Sunpill Kim — paper acceptances, awards, talks."
+---
+
+<div class="page-header">
+  <h1>News</h1>
+  <p class="lede">Paper acceptances, awards, and other updates. Newest first.</p>
+</div>
+
+<section>
+  <ul class="news-list">
+    {%- for n in site.data.news -%}
+      <li>
+        <span class="date">{{ n.date | date: "%b %Y" }}</span>
+        <span class="body">
+          {%- if n.body -%}
+            {{ n.body }}
+          {%- else -%}
+            <span class="venue {% if n.tier == 'top' %}top{% endif %}">{{ n.venue }}</span>
+            accepts <em>{{ n.title }}</em>
+            {%- if n.authors -%}
+              <span class="ptitle">{{ n.authors }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </span>
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
